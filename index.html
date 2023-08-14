@@ -25,26 +25,28 @@
 
             <div id="header">
                 <div class="score">
-                    <h1> <span>0</span></h1>
+                    <h1 id="scoreBoard"><span>0</span></h1>
                     <h3> Total Score</h3>
                 </div>
 
                 <div class="box">
-                <div class="selectbox">
-                    <button onclick="appentToDisplay('1')">1</button>
-                    <button onclick="appentToDisplay('2')">2</button>
-                    <button onclick="appentToDisplay('3')">3</button>
-                    <button onclick="appentToDisplay('4')">4</button>
-                    <button onclick="appentToDisplay('5')">5</button>
-                    <button onclick="appentToDisplay('6')">6</button>
+                    <div class="selectbox">
+                        <button onclick="appentToDisplay('1')">1</button>
+                        <button onclick="appentToDisplay('2')">2</button>
+                        <button onclick="appentToDisplay('3')">3</button>
+                        <button onclick="appentToDisplay('4')">4</button>
+                        <button onclick="appentToDisplay('5')">5</button>
+                        <button onclick="appentToDisplay('6')">6</button>
+                    </div>
+                    <div class="11">
+                        <h1>Select a Number</h1>
+                    </div>
+
                 </div>
-                    <div class="11"><h1>Select a Number</h1> </div>
 
             </div>
-               
-            </div>
 
-            
+
             <div id="imagebox">
                 <img src="dice_1.png" alt="">
                 <h2> Click on Dice</h2>
@@ -69,9 +71,10 @@
 
 
 
-        selectBoxInput = [];
+        //    let  selectBoxInput = [];
+        let score = 0;
 
-        function appentToDisplay(Number){
+        function appentToDisplay(Number) {
             selectBoxInput = Number;
             // console.log(selectBoxInput)
         }
@@ -83,23 +86,43 @@
             "dice_3.png",
             "dice_4.png",
             "dice_5.png",
-            "dice_6.png" ];
+            "dice_6.png"];
+
+        diceImage.onclick = () => {
+
+            if (selectBoxInput === null) {
+                alert("Please select a number before clicking the dice.");
+                
+            }
+
+            else {
+                let randomIndex = Math.floor(Math.random() * pictures.length)
 
 
+                let xyz = pictures[randomIndex]
+                diceImage.src = xyz;
 
-     diceImage.onclick = () => {
-           let randomIndex = Math.floor(Math.random()*pictures.length)
+                if (randomIndex + 1 == selectBoxInput) {
+
+                    function addscore() {
+                        score += 20
+                        //    const score = document.querySelector("#pradeep").innerHTML
+                        let anuj = document.getElementById("scoreBoard")
+                        anuj.innerHTML = score;
+
+                    }
+                    addscore();
+                }
+                else {
+                    score -= 5
+                    let anuj = document.getElementById("scoreBoard")
+                    anuj.innerHTML = score;
+                }
 
 
-           let xyz = pictures[randomIndex]
-           if(randomIndex =selectBoxInput){
-               diceImage.push( pictures[randomIndex])
-
-
-           }
-            
-
+            }
         }
+
 
 
 
