@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+</head>
+<link rel="stylesheet" href="index.css">
+
+<body>
+
+    <div id="wrapper">
+
+        <div id="screen1">
+            <div class="img">
+                <img src="https://dice-game-aditya.vercel.app/images/dices.png" alt="">
+            </div>
+            <div class="btn">
+                <h1> DICE GAME</h1>
+                <Button>Play Now</Button>
+            </div>
+        </div>
+        <div id="screen2">
+
+            <div id="header">
+                <div class="score">
+                    <h1> <span>0</span></h1>
+                    <h3> Total Score</h3>
+                </div>
+
+                <div class="box">
+                <div class="selectbox">
+                    <button onclick="appentToDisplay('1')">1</button>
+                    <button onclick="appentToDisplay('2')">2</button>
+                    <button onclick="appentToDisplay('3')">3</button>
+                    <button onclick="appentToDisplay('4')">4</button>
+                    <button onclick="appentToDisplay('5')">5</button>
+                    <button onclick="appentToDisplay('6')">6</button>
+                </div>
+                    <div class="11"><h1>Select a Number</h1> </div>
+
+            </div>
+               
+            </div>
+
+            
+            <div id="imagebox">
+                <img src="dice_1.png" alt="">
+                <h2> Click on Dice</h2>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const screen1 = document.querySelector("#screen1")
+        const screen2 = document.querySelector("#screen2")
+        const startButton = document.querySelector(".btn button")
+        const diceImage = document.querySelector(".imagebox img")
+
+        startButton.onclick = () => {
+
+            screen1.style.display = "none";
+            screen2.style.display = "flex";
+        }
+
+
+
+        selectBoxInput = [];
+
+        function appentToDisplay(Number){
+            selectBoxInput = Number;
+            // console.log(selectBoxInput)
+        }
+
+
+        let pictures = [
+            "dice_1.png",
+            "dice_2.png",
+            "dice_3.png",
+            "dice_4.png",
+            "dice_5.png",
+            "dice_6.png" ];
+
+
+
+     diceImage.onclick = () => {
+        pictures.src = event.target.src;
+     }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

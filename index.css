@@ -1,0 +1,96 @@
+
+#screen1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.img{
+    height: 433px;
+    width: 606px;
+    margin-left: -125px;
+    margin-top: 55px;
+    
+}
+
+.img img{
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+.btn h1{
+    font-size: 98px;
+    font-weight: bold;
+    margin-left: -100px;
+}
+
+.btn button{
+
+    font-size: 44px;
+    padding: 5px 50px;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+}
+
+#screen2 {
+    width: 100%; 
+ height: auto;
+   display: none;
+   position: relative;
+}
+
+.score h1{
+    font-size: 100px;
+    margin: 20px 70px;
+
+}
+.score h3{
+    font-size: 44px;
+    margin-top: -20px;
+}
+
+.selectbox{
+    margin-right: 20px;
+}
+.selectbox button{
+    font-size: 64px;
+    padding: 0px 15px;
+    margin: 2px;
+    margin-top: 30px;
+    
+
+}
+
+#header{
+    width: 100vw; 
+height: 200px;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+
+#imagebox{
+    height: 300px ;
+    width: 300px;
+
+    position: absolute;
+    top: 300px;
+    left: 600px;
+    
+}
+
+#imagebox img{
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+#imagebox h2{
+    font-size: 34px;
+    margin-left: 20px;
+}
+
+
