@@ -57,7 +57,9 @@
         const screen1 = document.querySelector("#screen1")
         const screen2 = document.querySelector("#screen2")
         const startButton = document.querySelector(".btn button")
-        const diceImage = document.querySelector(".imagebox img")
+        let diceImage = document.querySelector("#imagebox img")
+
+        // console.log(diceImage)
 
         startButton.onclick = () => {
 
@@ -86,8 +88,18 @@
 
 
      diceImage.onclick = () => {
-        pictures.src = event.target.src;
-     }
+           let randomIndex = Math.floor(Math.random()*pictures.length)
+
+
+           let xyz = pictures[randomIndex]
+           if(randomIndex =selectBoxInput){
+               diceImage.push( pictures[randomIndex])
+
+
+           }
+            
+
+        }
 
 
 
