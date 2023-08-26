@@ -2,8 +2,10 @@ const screen1 = document.querySelector("#screen1")
 const screen2 = document.querySelector("#screen2")
 const startButton = document.querySelector(".btn button")
 let diceImage = document.querySelector("#imagebox img")
-
+let buttons = document.querySelectorAll(".selectbox button")
 // console.log(diceImage)
+console.log(buttons)
+
 
 startButton.onclick = () => {
 
@@ -13,12 +15,14 @@ startButton.onclick = () => {
 
 
 
-//    let  selectBoxInput = [];
+   let  selectBoxInput;
 let score = 0;
 
 function appentToDisplay(Number) {
-    selectBoxInput = Number;
-    // console.log(selectBoxInput)
+    selectBoxInput =parseInt(Number) ;
+    buttons.forEach(button => button.classList.remove("highlight"));
+    document.getElementById(`button${selectBoxInput}`).classList.add("highlight");
+    
 }
 
 
@@ -32,7 +36,7 @@ let pictures = [
 
 diceImage.onclick = () => {
 
-    if (selectBoxInput === null) {
+    if (selectBoxInput === undefined) {
         alert("Please select a number before clicking the dice.");
         
     }
